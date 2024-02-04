@@ -4,13 +4,13 @@ import { AiFillGoogleCircle } from 'react-icons/ai'
 import {GoogleAuthProvider, signInWithPopup, getAuth} from 'firebase/auth'
 import { app } from '../firebase'
 import {useDispatch} from 'react-redux'
-import {useNavigate} from 'react-dom'
+import {useNavigate} from 'react-router-dom'
 import { signInSuccess} from '../redux/user/userSlice'
 
 export default function OAuth() {
     const auth = getAuth(app)
     const dispatch = useDispatch()
-    const navigate = useNavigate
+    const navigate = useNavigate()
     const handleGoogleClick = async () => {
         const provider = new GoogleAuthProvider()
         provider.setCustomParameters({ prompt: 'select_account' })
